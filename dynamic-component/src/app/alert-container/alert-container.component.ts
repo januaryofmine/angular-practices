@@ -41,9 +41,9 @@ export class AlertContainerComponent
   }
 
   renderComponent() {
-    const container = this.container;
-    container.clear();
-    const injector = container.injector;
+    // const container = this.container;
+    this.container.clear();
+    const injector = this.container.injector;
 
     const cfr: ComponentFactoryResolver = injector.get(
       ComponentFactoryResolver
@@ -51,7 +51,7 @@ export class AlertContainerComponent
 
     const componentFactory = cfr.resolveComponentFactory(AlertContentComponent);
 
-    const componentRef = container.createComponent(
+    const componentRef = this.container.createComponent(
       componentFactory,
       0,
       injector
